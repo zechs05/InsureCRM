@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add custom animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.hover-float {
+  transition: all 0.3s ease;
+}
+
+.hover-float:hover {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom gradient backgrounds */
+.bg-gradient-premium {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+}
+
+/* Pricing card hover effects */
+.pricing-card {
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-8px);
+}
+
+/* Custom checkbox styles */
+.feature-check {
+  @apply text-green-500;
+  filter: drop-shadow(0 0 2px rgba(34, 197, 94, 0.2));
+}
+
+/* Button animations */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: glow 2s linear infinite;
+}
+
+@keyframes glow {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Price tag styles */
+.price-tag {
+  position: relative;
+  display: inline-block;
+}
+
+.price-tag::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 16px;
+  height: 16px;
+  background: currentColor;
+  opacity: 0.1;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
